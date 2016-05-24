@@ -10,14 +10,24 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var textFieldText: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        let url = NSURL(string: "http://www.weather-forecast.com")
+        
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    @IBAction func submitButtonTapped(sender: AnyObject) {
+        performSegueWithIdentifier("segue", sender: self)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let destination = segue.destinationViewController as! DetailViewController
+        destination.checkCity = textFieldText.text!
+//        destination.cityNameLabel.text = textFieldText.text
     }
 
 

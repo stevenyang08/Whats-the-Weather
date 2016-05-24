@@ -1,25 +1,143 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="URD-7f-Y4E">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="WhatsTheWeather" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a city name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="t9c-yo-LjI">
+                                <rect key="frame" x="83" y="239" width="209" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="B13-pH-lro"/>
+                                    <constraint firstAttribute="width" constant="209" id="ZOA-Dd-6xg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Check the weather" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bdK-3F-m9M">
+                                <rect key="frame" x="66" y="151" width="243" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="243" id="AWa-G0-n9u"/>
+                                    <constraint firstAttribute="height" constant="52" id="jzI-HM-cQh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FeN-nh-rqw">
+                                <rect key="frame" x="132" y="326" width="110" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="110" id="8BW-rn-KdF"/>
+                                    <constraint firstAttribute="height" constant="42" id="nLj-Ld-m3d"/>
+                                </constraints>
+                                <state key="normal" title="Submit"/>
+                                <connections>
+                                    <action selector="submitButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5oD-fp-8rU"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bdK-3F-m9M" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Gjy-yg-9UV"/>
+                            <constraint firstItem="t9c-yo-LjI" firstAttribute="top" secondItem="bdK-3F-m9M" secondAttribute="bottom" constant="36" id="JzS-cb-GR3"/>
+                            <constraint firstItem="FeN-nh-rqw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bBI-zU-fdv"/>
+                            <constraint firstItem="bdK-3F-m9M" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="87" id="cBD-tY-jpZ"/>
+                            <constraint firstItem="FeN-nh-rqw" firstAttribute="top" secondItem="t9c-yo-LjI" secondAttribute="bottom" constant="57" id="qg8-fZ-YKH"/>
+                            <constraint firstItem="t9c-yo-LjI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rfC-3n-4nn"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="myJ-dX-axA"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="textFieldText" destination="t9c-yo-LjI" id="DCI-qB-3lB"/>
+                        <segue destination="OTs-QR-k0Y" kind="show" identifier="segue" id="Y6u-qY-FbY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1136.5" y="399.5"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="ibP-4d-Slq">
+            <objects>
+                <viewController id="OTs-QR-k0Y" customClass="DetailViewController" customModule="WhatsTheWeather" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DpF-Of-YUi"/>
+                        <viewControllerLayoutGuide type="bottom" id="v0g-BA-0am"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mCa-Ik-D45">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HPW-vq-sJV">
+                                <rect key="frame" x="109" y="135" width="157" height="62"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="157" id="NVD-qk-aXb"/>
+                                    <constraint firstAttribute="height" constant="62" id="e7M-eB-6Y8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weather Report" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ueB-Rj-y3O">
+                                <rect key="frame" x="20" y="242" width="335" height="319"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="319" id="CuQ-BJ-OPQ"/>
+                                    <constraint firstAttribute="width" constant="335" id="foY-Yp-CY2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="HPW-vq-sJV" firstAttribute="centerX" secondItem="mCa-Ik-D45" secondAttribute="centerX" id="6mR-ZR-wvC"/>
+                            <constraint firstItem="HPW-vq-sJV" firstAttribute="top" secondItem="DpF-Of-YUi" secondAttribute="bottom" constant="71" id="KQv-eE-L2m"/>
+                            <constraint firstItem="ueB-Rj-y3O" firstAttribute="top" secondItem="HPW-vq-sJV" secondAttribute="bottom" constant="45" id="feV-Az-kMZ"/>
+                            <constraint firstItem="ueB-Rj-y3O" firstAttribute="centerX" secondItem="mCa-Ik-D45" secondAttribute="centerX" id="iUv-VB-DGl"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="cityNameLabel" destination="HPW-vq-sJV" id="T2S-Rc-4Cd"/>
+                        <outlet property="weatherReport" destination="ueB-Rj-y3O" id="4OD-pD-cx4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oxP-aL-FoE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1560.5" y="399.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Zty-Xi-T4p">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="URD-7f-Y4E" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="q12-E5-T10">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="xGV-dE-BdA"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nTT-HI-eE6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="324" y="399"/>
         </scene>
     </scenes>
 </document>
